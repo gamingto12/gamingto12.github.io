@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KoolFreedom Bot Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 1rem; }
+    header { text-align: center; }
+    section { margin-bottom: 2rem; }
+    h1 { color: #4a90e2; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KoolFreedom Bot</h1>
+    <p>Your friendly Discord moderation bot</p>
+  </header>
+
+  <section id="stats">
+    <h2>Bot Stats</h2>
+    <ul>
+      <li>Servers: 42</li>
+      <li>Users: 1234</li>
+      <li>Uptime: 3 days 4 hours</li>
+    </ul>
+  </section>
+
+  <section id="commands">
+  <h2>Commands</h2>
+
+  <h3>Utility Commands</h3>
+  <ul>
+    <li><b>github</b> — Shows last update from a GitHub repository</li>
+    <li><b>ping</b> — Shows the bot latency</li>
+    <li><b>userinfo</b> — Displays information about a provided user. Defaults to you if none provided.</li>
+    <li><b>uptime</b> — Shows how long the bot has been online</li>
+    <li><b>serverinfo</b> — Shows information about the current Discord server</li>
+    <li><b>setprefix</b> — Change the bot prefix for this server (Admin only)</li>
+  </ul>
+
+  <h3>Moderation Commands</h3>
+  <ul>
+    <li><b>ban</b> — Bans a user from the server</li>
+    <li><b>unban</b> — Unbans a user</li>
+    <li><b>mute</b> — Mutes a user</li>
+    <li><b>unmute</b> — Unmutes a user</li>
+    <li><b>clear</b> — Deletes a specified number of messages</li>
+    <li><b>warn</b> — Issues a warning to a user</li>
+  </ul>
+
+  <h3>Server Commands</h3>
+  <ul>
+    <li><b>serverban</b> — Adds the "Server Banned" role to a user</li>
+    <li><b>serverunban</b> — Removes the "Server Banned" role from a user</li>
+    <li><b>exile</b> — Moves user to "Exiled" role</li>
+    <li><b>forgive</b> — Removes user from "Exiled" role</li>
+  </ul>
+
+  <h3>Admin Commands</h3>
+  <ul>
+    <li><b>lockdown</b> — Locks down the server channels</li>
+    <li><b>slowmode</b> — Sets channel slowmode</li>
+    <li><b>setprefix</b> — Changes bot prefix (also listed in Utility)</li>
+  </ul>
+
+  <h3>Integration Commands</h3>
+  <ul>
+    <li><b>github</b> — Shows latest GitHub repo event (also in Utility)</li>
+    <!-- Add others like weather, meme, Minecraft status if you have -->
+  </ul>
+
+  <h3>Timezone Commands</h3>
+  <ul>
+    <li><b>settimezone</b> — Sets your personal timezone</li>
+    <li><b>time</b> — Shows the current time in your set timezone</li>
+  </ul>
+
+</section>
+
+  <section id="support">
+    <h2>Support & SRC</h2>
+    <p>I currently do not have plans to open a support server or release the bot to the public since I use it for other purposes. You are more than welcome to use the source code for it, though!</a></p>
+    <p><a href="https://github.com/KoolFreedom/KoolFreedomBot">Source Code</a></p>
+  </section>
+</body>
+</html>
