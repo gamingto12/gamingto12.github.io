@@ -1,152 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>KoolFreedom Bot Documentation</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-<style>
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    line-height: 1.6;
-  }
-  header {
-    background-color: #4a90e2;
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-    border-radius: 0 0 8px 8px;
-  }
-  section {
-    background-color: white;
-    padding: 1rem 1.5rem;
-    margin-bottom: 2.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  h2, h3 {
-    color: #4a90e2;
-  }
-  a.button {
-    background-color: #4a90e2;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-right: 1rem;
-    text-decoration: none;
-    display: inline-block;
-  }
-  a.button:hover {
-    background-color: #357ABD;
-  }
-  @media (max-width: 600px) {
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KoolFreedom Bot Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
     body {
-      padding: 0 0.5rem;
+      font-family: 'Inter', sans-serif;
+      background-color: #0e1117;
+      color: #e3e3e3;
+      margin: 0;
+      padding: 0;
     }
-  }
-</style>
+    header {
+      background-color: #1a1d24;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #72aaff;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #c2c2c2;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #2b2f36;
+      color: #e3e3e3;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+    nav a:hover {
+      background-color: #3e4451;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #72aaff;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+    .command {
+      padding: 0.5rem;
+      margin: 0.3rem 0;
+      background: #1d1f26;
+      border-left: 4px solid #72aaff;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 2rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>KoolFreedom Bot</h1>
-    <p>Your multi-purpose Discord/Minecraft bot</p>
+    <p>A Discord bot for moderation, utility, and server integration</p>
+    <nav>
+      <a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot">Invite</a>
+      <a href="https://discord.gg/YOUR_INVITE_CODE">Support</a>
+      <a href="https://github.com/yourusername/koolfreedombot">GitHub</a>
+    </nav>
   </header>
 
-  <section id="stats">
-    <h2>Bot Stats</h2>
-    <ul>
-      <li>Servers: 1</li>
-      <li>Users: 83</li>
-      <li>Uptime: use kf!uptime</li>
-    </ul>
-  </section>
+  <main>
+    <section id="commands">
+      <h2>Commands by Category</h2>
 
-  <section id="cogs">
-    <h2>Cogs list</h2>
-    <ul>
-      <li>admin</li>
-      <li>integrations</li>
-      <li>moderation</li>
-      <li>server_commands</li>
-      <li>timezone</li>
-      <li>utility</li>
-    </ul>
-  </section>
+      <h3>Utility</h3>
+      <div class="command">`ping` - Show bot latency</div>
+      <div class="command">`uptime` - Show bot uptime</div>
+      <div class="command">`userinfo` - Info about a user</div>
+      <div class="command">`botinfo` - Show bot stats and details</div>
 
-  <section id="commands">
-  <h2>Commands</h2>
+      <h3>Integrations</h3>
+      <div class="command">`github [repo]` - Show latest GitHub event</div>
+      <div class="command">`mcstatus` - Show Minecraft server status</div>
 
-  <h3>Utility Commands</h3>
-  <ul>
-    <li><b>avatar</b> — Displays the given user's avatar</li>
-    <li><b>ping</b> — Shows the bot latency</li>
-    <li><b>userinfo</b> — Displays information about a provided user. Defaults to you if none provided.</li>
-    <li><b>uptime</b> — Shows how long the bot has been online</li>
-    <li><b>serverinfo</b> — Shows information about the current Discord server</li>
-    <li><b>setprefix</b> — Change the bot prefix for this server (Admin only)</li>
-    <li><b>roleinfo</b> — Gives information about a given role</li>
-    <li><b>botinfo</b> — Displays information about the bot</li>
-    <li><b>ascii</b> — Turns any text into ASCII</li>
-    <li><b>say</b> — Repeats the given message as the bot</li>
-    <li><b>eightball</b> — We all know about the "magic 8-ball"</li>
-  </ul>
+      <h3>Moderation</h3>
+      <div class="command">`kick`, `ban`, `unban`, `warn`, `mute`, `unmute`, `purge`, `softban`</div>
 
-  <h3>Moderation Commands</h3>
-  <ul>
-    <li><b>ban</b> — Bans a user from the server</li>
-    <li><b>unban</b> — Unbans a user</li>
-    <li><b>mute</b> — Mutes a user</li>
-    <li><b>unmute</b> — Unmutes a user</li>
-    <li><b>clear</b> — Deletes a specified number of messages</li>
-  </ul>
+      <h3>Admin</h3>
+      <div class="command">`setprefix`, `lockdown`, `slowmode`, `clear`</div>
 
-  <h3>Server Commands</h3>
-  <h4>These are mainly for if you run a Minecraft server with this bot, these come in handy for easy permissions handling</h4>
-  <ul>
-    <li><b>serverban</b> — Adds the "Server Banned" role to a user</li>
-    <li><b>serverunban</b> — Removes the "Server Banned" role from a user</li>
-    <li><b>exile</b> — Moves user to "Exiled" role</li>
-    <li><b>forgive</b> — Removes user from "Exiled" role</li>
-    <li><b>staffadd</b> — Adds a user to the Admin list (Currently only supports the "Admin" role for starting out on)</li>
-    <li><b>promote</b> — Promotes the added Admin to Senior Admin</li>
-    <li><b>senior_suspend</b> — Removes a rogue Senior Admin</li>
-    <li><b>suspend</b> — Does exactly what senior_suspend does but for normal Admins</li>
-  </ul>
+      <h3>Developer</h3>
+      <div class="command">`reload` - Reload bot extensions</div>
 
-  <h3>Admin Commands</h3>
-  <ul>
-    <li><b>lockdown</b> — Locks down the channel that the command was executed in</li>
-    <li><b>unlock</b> — Unlocks the locked channel</li>
-    <li><b>setprefix</b> — Changes bot prefix (also listed in Utility)</li>
-    <li><b>stop</b> — Shutdown the bot (Developer only)</li>
-    <li><b>restart</b> — Restarts the bot (Developer only)</li>
-    <li><b>reload</b> — Reloads the given cog (Refer to the "cogs" section)</li>
-  </ul>
+      <h3>Server Commands (Mainly used if linked with an MC server)</h3>
+      <div class="command">'serverban' - Adds a role named "Server Banned" to a user | Prevents them from seeing the in-game server-chat from Discord</div>
+      <div class="command">'serverunban' - Removes the Server Banned role</div>
+      <div class="command">'exile' - Sends a user to the Shadow Realm | Prevents the user from seeing any channel</div>
+      <div class="command">'forgive' - Resolves the user of all their sins</div>
+      <div class="command">'appban' - Bans a user from submitting an application forum post</div>
+    </section>
+  </main>
 
-  <h3>Integration Commands</h3>
-  <ul>
-    <li><b>github</b> — Shows latest GitHub repo event (also in Utility)</li>
-    <li><b>fact</b> — Shows a useless fact</li>
-    <li><b>weather</b> — Shows the current forecast of an inputted location</li>
-    <li><b>mcstatus</b> — Gives a status report of a given Minecraft server address.</li>
-  </ul>
-
-  <h3>Timezone Commands</h3>
-  <ul>
-    <li><b>settimezone</b> — Sets your personal timezone</li>
-    <li><b>timefor</b> — Shows the current time in your set timezone</li>
-    <li><b>convert</b> — Shows the conversion between one timezone and another</li>
-  </ul>
-
-</section>
-
-  <section id="support">
-    <h2>Support & SRC</h2>
-    <p>I currently do not have plans to open a support server or release the bot to the public since I use it for other purposes. You are more than welcome to use the source code for it, though!</a></p>
-    <p><a href="https://github.com/KoolFreedom/KoolFreedomBot">Source Code</a></p>
-  </section>
+  <footer>
+    <p>&copy; 2025 KoolFreedom Bot. Built with ❤️ and Python.</p>
+  </footer>
 </body>
 </html>
