@@ -1,123 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KoolFreedom Bot Documentation</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0e1117;
-      color: #e3e3e3;
-      margin: 0;
-      padding: 0;
+  <title>KoolFreedom — About Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     }
-    header {
-      background-color: #1a1d24;
-      padding: 2rem;
-      text-align: center;
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #72aaff;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #c2c2c2;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #2b2f36;
-      color: #e3e3e3;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.2s;
-    }
-    nav a:hover {
-      background-color: #3e4451;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #72aaff;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.5rem;
-    }
-    .command {
-      padding: 0.5rem;
-      margin: 0.3rem 0;
-      background: #1d1f26;
-      border-left: 4px solid #72aaff;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      padding: 2rem;
-      color: #666;
-    }
-  </style>
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-  <header>
-    <h1>KoolFreedom Bot</h1>
-    <p>A Discord bot for moderation, utility, and server integration</p>
-    <nav>
-      <a href="https://discord.gg/MTYrSgVkmd">Support</a>
-      <a href="https://github.com/KoolFreedom/KoolFreedomBot">GitHub</a>
-    </nav>
-  </header>
+<body class="bg-zinc-50 text-zinc-700 dark:bg-neutral-950 dark:text-zinc-200 transition-colors duration-300">
 
-  <main>
-    <section id="commands">
-      <h2>Commands by Category</h2>
+<header class="text-center py-20">
+  <h1 class="text-5xl font-bold text-blue-600 dark:text-blue-400">KoolFreedom</h1>
+  <p class="mt-4 text-lg max-w-xl mx-auto text-zinc-600 dark:text-zinc-400">Developer • Student • Music Nerd • Minecraft & Modding Enthusiast</p>
+  <button onclick="toggleTheme()" class="mt-5 px-4 py-2 rounded-lg bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition flex items-center gap-2 mx-auto">
+    <i data-lucide="sun" class="dark:hidden"></i>
+    <i data-lucide="moon" class="hidden dark:block"></i>
+    Toggle Theme
+  </button>
+</header>
 
-      <h3>Utility</h3>
-      <div class="command">`ping` - Show bot latency</div>
-      <div class="command">`uptime` - Show bot uptime</div>
-      <div class="command">`userinfo` - Info about a user</div>
-      <div class="command">`botinfo` - Show bot stats and details</div>
-      <div class="command">`roleinfo` - Shows info about a given role</div>
-      <div class="command">`avatar` - Shows a given users' avatar</div>
-      <div class="command">`ascii` - Converts a given text into ASCII</div>
-      <div class="command">`eightball` - Plays 8ball</div>
+<main class="max-w-5xl mx-auto px-4">
 
-      <h3>Integrations</h3>
-      <div class="command">`github [repo]` - Show latest GitHub event</div>
-      <div class="command">`mcstatus` - Show Minecraft server status</div>
+  <!-- Where to Find Me -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">Where to Find Me</h2>
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="#"><i data-lucide="github"></i> GitHub</a>
+      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="#"><i data-lucide="cube"></i> Modrinth</a>
+      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="#"><i data-lucide="message-circle"></i> Discord</a>
+      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="#"><i data-lucide="sword"></i> X (Twitter)</a>
+    </div>
+  </section>
 
-      <h3>Moderation</h3>
-      <div class="command">`kick`, `ban`, `unban`, `warn`, `mute`, `unmute`, `purge`, `softban`</div>
+  <!-- Interests -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">What are my interests?</h2>
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Minecraft plugin development</div>
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Discord Bot development</div>
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Music, rhythm games</div>
+    </div>
+  </section>
 
-      <h3>Admin</h3>
-      <div class="command">`setprefix`, `lockdown`, `slowmode`, `clear`</div>
+  <!-- Projects -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">Current Projects</h2>
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow">
+        <h3 class="font-semibold text-lg">KoolFreedomBot</h3>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Discord moderation & utility bot</p>
+      </div>
+      <div class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow">
+        <h3 class="font-semibold text-lg">KoolChatFilter</h3>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Minecraft chat filtering system</p>
+      </div>
+      <div class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow">
+        <h3 class="font-semibold text-lg">KoolSMPCore</h3>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Lightweight Minecraft SMP Plugin that has various features.</p>
+      </div>
+      <div class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow">
+        <h3 class="font-semibold text-lg">SapphireBot</h3>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Discord bot with moderation, admin and a sentence scrambler for funsies</p>
+      </div>
+    </div>
+  </section>
 
-      <h3>Developer</h3>
-      <div class="command">`reload` - Reload bot extensions</div>
+  <!-- Contact -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">Contact</h2>
+    <p class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow mt-6">Best way to reach me: Discord (@gamingto12)</p>
+    <p class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow mt-6">Other ways: GitHub Issues, X/Twitter, </p>
+  </section>
+</main>
 
-      <h3>Server Commands (Mainly used if linked with an MC server)</h3>
-      <div class="command">`serverban` - Adds a role named "Server Banned" to a user | Prevents them from seeing the in-game server-chat from Discord</div>
-      <div class="command">`serverunban` - Removes the Server Banned role</div>
-      <div class="command">`exile` - Sends a user to the Shadow Realm | Prevents the user from seeing any channel</div>
-      <div class="command">`forgive` - Resolves the user of all their sins</div>
-      <div class="command">`appban` - Bans a user from submitting an application forum post</div>
-    </section>
-  </main>
+<footer class="text-center text-sm py-10 opacity-60">
+  <p>&copy; 2025 KoolFreedom — Made with HTML + Tailwind</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 KoolFreedom Bot. Built with ❤️ and Python.</p>
-  </footer>
+<script>lucide.createIcons();</script>
 </body>
 </html>
