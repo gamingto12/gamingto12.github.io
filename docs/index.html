@@ -6,17 +6,6 @@
   <title>gamingto12 — About Me</title>
   <link rel="icon" type="image/x-icon" href="https://gamingto12.is-a.dev/assets/favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Theme toggle
-    function toggleTheme() {
-      const html = document.documentElement;
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.remove('dark');
-    }
-  </script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-zinc-50 text-zinc-700 dark:bg-neutral-950 dark:text-zinc-200 transition-colors duration-300">
@@ -24,11 +13,6 @@
 <header class="text-center py-20">
   <h1 class="text-5xl font-bold text-blue-600 dark:text-blue-400">gamingto12</h1>
   <p class="mt-4 text-lg max-w-xl mx-auto text-zinc-600 dark:text-zinc-400">Beginner Developer • Student • Music Nerd</p>
-  <button onclick="toggleTheme()" class="mt-5 px-4 py-2 rounded-lg bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition flex items-center gap-2 mx-auto">
-    <i data-lucide="sun" class="dark:hidden"></i>
-    <i data-lucide="moon" class="hidden dark:block"></i>
-    Toggle Theme (Broken rn lol)
-  </button>
 </header>
 
 <main class="max-w-5xl mx-auto px-4">
