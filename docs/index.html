@@ -7,65 +7,153 @@
   <link rel="icon" type="image/x-icon" href="https://gamingto12.is-a.dev/assets/favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+  .card {
+    background-color: rgb(var(--bg-card));
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 15px rgb(0 0 0 / 0.15);
+  }
+
+  .card-lg {
+    padding: 1.25rem;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(var(--border));
+    color: rgb(var(--accent));
+  }
+
+  .muted {
+    color: rgb(var(--text-muted));
+    font-size: 0.875rem;
+  }
+
+  .pill {
+    background-color: rgb(var(--bg-card));
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.1);
+  }
+</style>
 </head>
+
 <body class="bg-zinc-50 text-zinc-700 dark:bg-neutral-950 dark:text-zinc-200 transition-colors duration-300">
 
-<header class="text-center py-20">
-  <h1 class="text-5xl font-bold text-blue-600 dark:text-blue-400">gamingto12</h1>
-  <p class="mt-4 text-lg max-w-xl mx-auto text-zinc-600 dark:text-zinc-400">Beginner Developer • Student • Music Nerd</p>
+<header class="text-center py-24">
+  <h1 class="text-5xl font-bold text-sky-600 dark:text-sky-400">
+    gamingto12
+  </h1>
+  <p class="mt-4 text-lg max-w-xl mx-auto text-zinc-600 dark:text-zinc-400">
+    Beginner Developer • Student • Music Nerd
+  </p>
 </header>
 
 <main class="max-w-5xl mx-auto px-4">
 
   <!-- Where to Find Me -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">Where to Find Me</h2>
+  <section class="mb-20">
+    <h2 class="section-title">
+      <i data-lucide="compass"></i>
+      Where to Find Me
+    </h2>
+
     <div class="grid md:grid-cols-2 gap-4 mt-6">
-      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i> KoolFreedom Discord</a>
-      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i> Community Discord</a>
-      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="https://discord.com/users/373969695633571842" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i> My Discord Profile</a>
-      <a class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow hover:shadow-lg transition flex items-center gap-3" href="https://x.com/gamingto12" target="_blank" rel="noopener noreferrer"><i data-lucide="sword"></i> X / Twitter</a>
+      <a class="card flex items-center gap-3 border-l-4 border-sky-400"
+         href="https://discord.gg/MTYrSgVkmd" target="_blank">
+        <i data-lucide="message-circle"></i>
+        KoolFreedom Discord
+      </a>
+
+      <a class="card flex items-center gap-3 border-l-4 border-blue-400"
+         href="https://discord.gg/yh2DtaTwGt" target="_blank">
+        <i data-lucide="users"></i>
+        Community Discord
+      </a>
+
+      <a class="card flex items-center gap-3 border-l-4 border-violet-400"
+         href="https://discord.com/users/373969695633571842" target="_blank">
+        <i data-lucide="user"></i>
+        Discord Profile
+      </a>
+
+      <a class="card flex items-center gap-3 border-l-4 border-cyan-400"
+         href="https://x.com/gamingto12" target="_blank">
+        <i data-lucide="twitter"></i>
+        X / Twitter
+      </a>
     </div>
   </section>
 
   <!-- Interests -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">What are my interests?</h2>
-    <div class="grid md:grid-cols-2 gap-4 mt-6">
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Minecraft Plugin Development and Server Management</div>
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Discord Bot development</div>
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">All things music</div>
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Speedrunning (video games)</div>
+  <section class="mb-20">
+    <h2 class="section-title">
+      <i data-lucide="sparkles"></i>
+      Interests
+    </h2>
+
+    <div class="flex flex-wrap gap-3 mt-6">
+      <span class="pill">Minecraft Plugin Development</span>
+      <span class="pill">Server Management</span>
+      <span class="pill">Discord Bot Development</span>
+      <span class="pill">Music</span>
+      <span class="pill">Speedrunning</span>
     </div>
   </section>
 
   <!-- Projects -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">Current Projects</h2>
+  <section class="mb-20">
+    <h2 class="section-title">
+      <i data-lucide="hammer"></i>
+      Current Projects
+    </h2>
+
     <div class="grid md:grid-cols-2 gap-4 mt-6">
 
-      <a href="https://github.com/KoolFreedom/KoolFreedomBot" target="_blank" rel="noopener noreferrer"
-         class="block bg-white dark:bg-zinc-900 p-5 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg">KoolFreedomBot</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">Discord moderation & utility bot</p>
+      <a href="https://github.com/KoolFreedom/KoolFreedomBot" target="_blank"
+         class="card-lg group border border-transparent hover:border-sky-400/40">
+        <h3 class="font-semibold text-lg group-hover:text-sky-400">
+          KoolFreedomBot
+        </h3>
+        <p class="muted">Discord moderation & utility bot</p>
       </a>
 
-      <a href="https://github.com/KoolFreedom/KoolChatFilter" target="_blank" rel="noopener noreferrer"
-         class="block bg-white dark:bg-zinc-900 p-5 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg">KoolChatFilter</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">Minecraft chat filtering system</p>
+      <a href="https://github.com/KoolFreedom/KoolChatFilter" target="_blank"
+         class="card-lg group border border-transparent hover:border-blue-400/40">
+        <h3 class="font-semibold text-lg group-hover:text-blue-400">
+          KoolChatFilter
+        </h3>
+        <p class="muted">Minecraft chat filtering system</p>
       </a>
 
-      <a href="https://github.com/KoolFreedom/KoolSMPCore" target="_blank" rel="noopener noreferrer"
-         class="block bg-white dark:bg-zinc-900 p-5 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg">KoolSMPCore</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">Lightweight Minecraft SMP plugin with various features.</p>
+      <a href="https://github.com/KoolFreedom/KoolSMPCore" target="_blank"
+         class="card-lg group border border-transparent hover:border-violet-400/40">
+        <h3 class="font-semibold text-lg group-hover:text-violet-400">
+          KoolSMPCore
+        </h3>
+        <p class="muted">
+          Lightweight Minecraft SMP plugin with various features
+        </p>
       </a>
 
-      <div class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow">
-        <h3 class="font-semibold text-lg">SapphireBot</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
-          Privately made Discord bot with moderation, admin tools, and a sentence scrambler.
+      <div class="card-lg border border-transparent">
+        <h3 class="font-semibold text-lg text-rose-400">
+          SapphireBot
+        </h3>
+        <p class="muted">
+          Private Discord bot with moderation, admin tools,
+          and a sentence scrambler.
         </p>
       </div>
 
@@ -73,54 +161,81 @@
   </section>
 
   <!-- Languages -->
-   <section class="mb-16">
-    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">Coding Languages I Know</h2>
+  <section class="mb-20">
+    <h2 class="section-title">
+      <i data-lucide="code"></i>
+      Languages I Know
+    </h2>
+
     <div class="grid md:grid-cols-2 gap-4 mt-6">
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Python (I took like 2 classes in high-school. I do my best nowadays).</div>
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">C++ (I'm currently learning this in college)</div>
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">Java (I've been VERY slowly teaching myself this language via Minecraft plugin development)</div>
-      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow">HTML (This is literally the first thing I've done with HTML)</div>
+      <div class="card border-l-4 border-yellow-400">
+        Python — took a couple classes in high school, doing my best now
+      </div>
+      <div class="card border-l-4 border-emerald-400">
+        C++ — currently learning in college
+      </div>
+      <div class="card border-l-4 border-red-400">
+        Java — slowly self-taught through Minecraft plugins
+      </div>
+      <div class="card border-l-4 border-orange-400">
+        HTML — this site is literally my first real use of it
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-400 border-b border-zinc-300 dark:border-zinc-700 pb-2">Best Ways to Contact Me</h2>
+  <section class="mb-20">
+    <h2 class="section-title">
+      <i data-lucide="mail"></i>
+      Best Ways to Contact Me
+    </h2>
+
     <div class="grid md:grid-cols-2 gap-4 mt-6">
 
-      <a href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noopener noreferrer"
-         class="block bg-white dark:bg-zinc-900 p-5 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg">My Community Discord</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">My "main" Discord server for all things silly and fun. Come hangout and talk about all things gaming or get notified if I ever stream video games or upload videos to my dead Youtube.</p>
+      <a href="https://discord.gg/yh2DtaTwGt" target="_blank"
+         class="card-lg hover:border-blue-400/40 border border-transparent">
+        <h3 class="font-semibold text-lg">Community Discord</h3>
+        <p class="muted">
+          Main hangout server — gaming, chatting, and notifications
+        </p>
       </a>
 
-      <a href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noopener noreferrer"
-         class="block bg-white dark:bg-zinc-900 p-5 rounded-xl shadow hover:shadow-lg transition">
+      <a href="https://discord.gg/MTYrSgVkmd" target="_blank"
+         class="card-lg hover:border-sky-400/40 border border-transparent">
         <h3 class="font-semibold text-lg">KoolFreedom Discord</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">Discord server for all things KoolFreedom. This Discord is mainly for support for all KoolFreedom plugins but also for playing on KoolFreedom servers (yes, there's more than one).</p>
+        <p class="muted">
+          Support and discussion for KoolFreedom plugins & servers
+        </p>
       </a>
 
-      <a href="https://x.com/gamingto12" target="_blank" rel="noopener noreferrer"
-         class="block bg-white dark:bg-zinc-900 p-5 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg">Twitter/X</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">Tweeter. I don't even know my DM permissions so just try it and find out what happens.</p>
+      <a href="https://x.com/gamingto12" target="_blank"
+         class="card-lg hover:border-cyan-400/40 border border-transparent">
+        <h3 class="font-semibold text-lg">Twitter / X</h3>
+        <p class="muted">
+          DMs may or may not be open — good luck
+        </p>
       </a>
 
-      <div class="bg-white dark:bg-zinc-900 p-5 rounded-xl shadow">
+      <div class="card-lg">
         <h3 class="font-semibold text-lg">GitHub Issues</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
-          For project-specific questions or issues, feel free to open an issue on the relevant GitHub repository.
+        <p class="muted">
+          For project-specific questions, open an issue on GitHub
         </p>
       </div>
 
     </div>
   </section>
+
 </main>
 
-<footer class="text-center text-sm py-10 opacity-60">
-  <p>&copy; 2025 KoolFreedom — if you're reading this then you smell</p>
+<footer class="text-center text-sm py-12 opacity-60">
+  <p>&copy; 2025 KoolFreedom</p>
+  <p class="mt-1 text-xs">you really read the footer huh</p>
 </footer>
 
-<script>lucide.createIcons();</script>
+<script>
+  lucide.createIcons();
+</script>
+
 </body>
 </html>
