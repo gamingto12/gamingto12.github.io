@@ -8,21 +8,20 @@
   <link rel="icon" type="image/x-icon" href="https://gamingto12.is-a.dev/assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root {
-      --bg: #0b1016;
-      --ink: #e8eef5;
-      --muted: #9aa9b8;
-      --panel: #121922;
-      --line: #263240;
-      --accent: #33b8ad;
-      --accent-soft: #14343a;
-      --secondary: #ff8a57;
-      --secondary-soft: #3b241b;
-      --shadow: 0 20px 52px rgba(0, 0, 0, 0.34);
-      --radius: 18px;
+      --bg: #090c13;
+      --bg-soft: #101726;
+      --panel: #111c2b;
+      --panel-2: #0f141d;
+      --line: #24344b;
+      --ink: #e8f1ff;
+      --muted: #9bb0c8;
+      --brand: #46e0ca;
+      --warn: #ff9e68;
+      --radius: 16px;
     }
 
     * {
@@ -31,12 +30,14 @@
 
     body {
       margin: 0;
-      font-family: "Space Grotesk", sans-serif;
-      background: radial-gradient(circle at 12% 18%, #312318 0%, transparent 34%),
-        radial-gradient(circle at 88% 10%, #122933 0%, transparent 30%),
-        linear-gradient(180deg, #101722 0%, var(--bg) 100%);
+      font-family: "Sora", sans-serif;
       color: var(--ink);
-      line-height: 1.5;
+      background:
+        linear-gradient(120deg, rgba(70, 224, 202, 0.14), transparent 35%),
+        linear-gradient(280deg, rgba(255, 158, 104, 0.12), transparent 38%),
+        radial-gradient(circle at 88% 2%, #173349 0%, transparent 30%),
+        var(--bg);
+      min-height: 100vh;
     }
 
     a {
@@ -44,259 +45,298 @@
       text-decoration: none;
     }
 
-    .shell {
-      width: min(1080px, calc(100% - 2.2rem));
+    .wrap {
+      width: min(1060px, calc(100% - 2rem));
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
+      padding: 2.2rem 0 2.6rem;
     }
 
     .hero {
-      padding: 4.8rem 0 2.6rem;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 1.5rem;
-      align-items: end;
-    }
-
-    .intro {
-      background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 8px);
-      box-shadow: var(--shadow);
-      padding: 2rem;
+      border-radius: calc(var(--radius) + 10px);
+      background: linear-gradient(160deg, #132234 0%, #0f1623 70%);
+      padding: clamp(1.4rem, 3.5vw, 2rem);
       position: relative;
       overflow: hidden;
-      animation: rise 550ms ease both;
+      box-shadow: 0 24px 46px rgba(0, 0, 0, 0.38);
     }
 
-    .intro::before {
+    .hero::after {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
-      right: -80px;
-      top: -120px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
-      background: var(--accent-soft);
-      opacity: 0.95;
+      top: -170px;
+      right: -120px;
+      background: radial-gradient(circle, rgba(70, 224, 202, 0.36), rgba(70, 224, 202, 0));
+      pointer-events: none;
     }
 
-    .eyebrow {
+    .label {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.78rem;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.76rem;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      padding: 0.45rem 0.7rem;
-      border-radius: 999px;
+      background: rgba(9, 12, 19, 0.55);
       border: 1px solid var(--line);
-      background: #0f151e;
-      position: relative;
-      z-index: 1;
+      border-radius: 999px;
+      padding: 0.42rem 0.72rem;
     }
 
     .dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--secondary);
-      box-shadow: 0 0 0 5px rgba(236, 104, 50, 0.22);
-      animation: pulse 2.2s ease-in-out infinite;
+      background: var(--warn);
+      box-shadow: 0 0 0 4px rgba(255, 158, 104, 0.2);
     }
 
     h1 {
-      margin: 0.95rem 0 0.4rem;
-      font-size: clamp(2.4rem, 6.8vw, 4.1rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      position: relative;
-      z-index: 1;
+      font-size: clamp(2.2rem, 8vw, 4.8rem);
+      line-height: 0.92;
+      margin: 0.8rem 0 0.5rem;
+      letter-spacing: -0.04em;
     }
 
     .lead {
       margin: 0;
-      font-size: clamp(1.04rem, 1.8vw, 1.25rem);
       color: var(--muted);
-      max-width: 42ch;
-      position: relative;
-      z-index: 1;
+      max-width: 44ch;
+      font-size: clamp(0.95rem, 2vw, 1.14rem);
     }
 
-    .cta-row {
-      margin-top: 1.2rem;
+    .hero-actions {
+      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem;
-      position: relative;
-      z-index: 1;
+      gap: 0.55rem;
     }
 
-    .chip {
-      padding: 0.55rem 0.86rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 0.92rem;
-      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
-    }
-
-    .chip:hover {
-      transform: translateY(-2px);
-    }
-
-    .chip.primary {
-      background: var(--accent);
-      color: #051012;
-    }
-
-    .chip.secondary {
-      background: var(--secondary-soft);
-      border-color: #664131;
-    }
-
-    .hero-stack {
-      display: grid;
-      gap: 0.9rem;
-      animation: rise 700ms ease both;
-    }
-
-    .mini-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.1rem;
-      box-shadow: 0 8px 28px rgba(19, 36, 47, 0.08);
-    }
-
-    .mini-title {
-      margin: 0;
-      font-family: "IBM Plex Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-size: 0.73rem;
-      color: var(--muted);
-    }
-
-    .mini-list {
-      margin: 0.45rem 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 0.35rem;
-      font-size: 0.94rem;
-    }
-
-    main {
-      padding-bottom: 2.7rem;
-    }
-
-    section {
-      margin-top: 1.55rem;
-      animation: rise 0.8s ease both;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      margin-bottom: 0.78rem;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(1.25rem, 3vw, 1.7rem);
-      letter-spacing: -0.02em;
-    }
-
-    .section-icon {
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: #9cebe5;
-    }
-
-    .grid {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1rem;
-      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: #3e556a;
-      box-shadow: 0 14px 28px rgba(19, 36, 47, 0.11);
-    }
-
-    .card-link {
-      display: grid;
-      gap: 0.34rem;
-    }
-
-    .card-kicker {
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-family: "IBM Plex Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .card h3 {
-      margin: 0;
-      font-size: 1.06rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.52rem;
-    }
-
-    .pill {
-      background: #10161f;
-      border: 1px solid var(--line);
+      gap: 0.45rem;
+      padding: 0.56rem 0.84rem;
       border-radius: 999px;
-      padding: 0.42rem 0.84rem;
+      font-size: 0.88rem;
+      border: 1px solid transparent;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: #4b5f78;
+    }
+
+    .btn.primary {
+      background: var(--brand);
+      color: #04110f;
+      font-weight: 600;
+    }
+
+    .btn.ghost {
+      background: rgba(9, 12, 19, 0.55);
+      border-color: var(--line);
+    }
+
+    .stats {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(9, 12, 19, 0.52);
+      padding: 0.65rem 0.75rem;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-2);
+      padding: 1rem;
+    }
+
+    .panel h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.06rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .links {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .link-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      align-items: center;
+      background: var(--bg-soft);
+      border: 1px solid #203149;
+      border-radius: 12px;
+      padding: 0.64rem 0.72rem;
+      transition: border-color 160ms ease, transform 160ms ease;
+    }
+
+    .link-row:hover {
+      border-color: #3e6a80;
+      transform: translateX(3px);
+    }
+
+    .link-meta {
+      min-width: 0;
+    }
+
+    .link-meta h3 {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    .link-meta p {
+      margin: 0.15rem 0 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--brand);
+      white-space: nowrap;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .entry {
+      padding: 0.75rem 0.8rem;
+      border: 1px solid #24354d;
+      border-left: 4px solid #2c5d7d;
+      border-radius: 10px;
+      background: #0d1725;
+    }
+
+    .entry h3 {
+      margin: 0;
+      font-size: 0.94rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      align-items: baseline;
+    }
+
+    .entry small {
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+
+    .entry p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
       font-size: 0.85rem;
     }
 
-    footer {
-      text-align: center;
-      color: var(--muted);
+    .lower {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.42rem;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      border: 1px solid #2a3d56;
+      border-radius: 999px;
+      padding: 0.35rem 0.65rem;
+      background: #101b2a;
+      color: #b6c9dd;
+    }
+
+    .skills {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .skill {
       font-size: 0.82rem;
-      padding: 1.4rem 0 2rem;
-      border-top: 1px dashed #2e3b4a;
-      margin-top: 2.2rem;
+      display: grid;
+      gap: 0.24rem;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: #0f1928;
+      border: 1px solid #25384f;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #2f9a9a, #59d7d1);
+    }
+
+    footer {
+      margin-top: 1.2rem;
+      border-top: 1px dashed #263a52;
+      padding-top: 0.8rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
     }
 
     [data-reveal] {
       opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(12px);
+      transition: opacity 460ms ease, transform 460ms ease;
     }
 
     [data-reveal].show {
@@ -304,190 +344,126 @@
       transform: translateY(0);
     }
 
-    @keyframes rise {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes pulse {
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.15);
-        opacity: 0.85;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .hero {
+    @media (max-width: 920px) {
+      .layout,
+      .lower {
         grid-template-columns: 1fr;
-        padding-top: 3.2rem;
       }
 
-      .grid.two {
+      .stats {
         grid-template-columns: 1fr;
+      }
+
+      .entry h3 {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="shell">
-    <header class="hero">
-      <div class="intro">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> student developer in progress</span>
-        <h1>gamingto12</h1>
-        <p class="lead">I build Minecraft tools, Discord automation, and spaces where people actually hang out.</p>
-        <div class="cta-row">
-          <a class="chip primary" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer">Join Community Discord</a>
-          <a class="chip secondary" href="https://x.com/gamingto12" target="_blank" rel="noreferrer">Follow on X</a>
-        </div>
+  <div class="wrap">
+    <header class="hero" data-reveal>
+      <span class="label"><span class="dot" aria-hidden="true"></span>builder mode active</span>
+      <h1>gamingto12</h1>
+      <p class="lead">Student developer shipping Minecraft plugins, Discord systems, and community tools that are actually useful.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer"><i data-lucide="users"></i> Community Discord</a>
+        <a class="btn ghost" href="https://x.com/gamingto12" target="_blank" rel="noreferrer"><i data-lucide="twitter"></i> X / Twitter</a>
       </div>
-
-      <div class="hero-stack">
-        <article class="mini-panel">
-          <p class="mini-title">Current Focus</p>
-          <ul class="mini-list">
-            <li>Discord moderation and utility systems</li>
-            <li>Minecraft server quality-of-life plugins</li>
-            <li>Growing reliable community tools</li>
-          </ul>
-        </article>
-        <article class="mini-panel">
-          <p class="mini-title">Stack I Touch Most</p>
-          <ul class="mini-list">
-            <li>Python, Java, C++, HTML</li>
-            <li>GitHub for open plugin work</li>
-            <li>Discord......yep</li>
-          </ul>
-        </article>
+      <div class="stats">
+        <div class="stat"><b>4</b><span>Active projects</span></div>
+        <div class="stat"><b>3</b><span>Main languages in rotation</span></div>
+        <div class="stat"><b>1</b><span>Goal: better tools weekly</span></div>
       </div>
     </header>
 
     <main>
-      <section data-reveal>
-        <div class="section-head">
-          <span class="section-icon"><i data-lucide="compass"></i></span>
-          <h2>Where to Find Me</h2>
-        </div>
-        <div class="grid two">
-          <a class="card card-link" href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noreferrer">
-            <span class="card-kicker"><i data-lucide="message-circle"></i> Discord</span>
-            <h3>KoolFreedom Discord</h3>
-            <p>Support, updates, and plugin-focused conversation.</p>
-          </a>
-          <a class="card card-link" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer">
-            <span class="card-kicker"><i data-lucide="users"></i> Community</span>
-            <h3>Main Community Server</h3>
-            <p>General chatting, gaming, and announcements.</p>
-          </a>
-          <a class="card card-link" href="https://discord.com/users/373969695633571842" target="_blank" rel="noreferrer">
-            <span class="card-kicker"><i data-lucide="user"></i> Profile</span>
-            <h3>Discord Profile</h3>
-            <p>Quickest way to confirm it is actually me.</p>
-          </a>
-          <a class="card card-link" href="https://x.com/gamingto12" target="_blank" rel="noreferrer">
-            <span class="card-kicker"><i data-lucide="twitter"></i> Social</span>
-            <h3>X / Twitter</h3>
-            <p>Hey, random thought.</p>
-          </a>
-        </div>
+      <section class="layout" data-reveal>
+        <article class="panel">
+          <h2><i data-lucide="compass"></i> Live Links</h2>
+          <div class="links">
+            <a class="link-row" href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noreferrer">
+              <div class="link-meta">
+                <h3>KoolFreedom Discord</h3>
+                <p>support + plugin discussion</p>
+              </div>
+              <span class="tag">invite</span>
+            </a>
+            <a class="link-row" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer">
+              <div class="link-meta">
+                <h3>Main Community Server</h3>
+                <p>general chat + updates</p>
+              </div>
+              <span class="tag">invite</span>
+            </a>
+            <a class="link-row" href="https://discord.com/users/373969695633571842" target="_blank" rel="noreferrer">
+              <div class="link-meta">
+                <h3>Discord Profile</h3>
+                <p>direct profile link</p>
+              </div>
+              <span class="tag">profile</span>
+            </a>
+            <a class="link-row" href="https://x.com/gamingto12" target="_blank" rel="noreferrer">
+              <div class="link-meta">
+                <h3>X / Twitter</h3>
+                <p>updates + random thoughts</p>
+              </div>
+              <span class="tag">social</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2><i data-lucide="hammer"></i> Project Radar</h2>
+          <div class="timeline">
+            <a class="entry" href="https://github.com/KoolFreedom/KoolFreedomBot" target="_blank" rel="noreferrer">
+              <h3>KoolFreedomBot <small>open-source</small></h3>
+              <p>Discord moderation and utility bot.</p>
+            </a>
+            <a class="entry" href="https://github.com/KoolFreedom/KoolChatFilter" target="_blank" rel="noreferrer">
+              <h3>KoolChatFilter <small>open-source</small></h3>
+              <p>Minecraft chat filtering with practical controls.</p>
+            </a>
+            <a class="entry" href="https://github.com/KoolFreedom/KoolSMPCore" target="_blank" rel="noreferrer">
+              <h3>KoolSMPCore <small>open-source</small></h3>
+              <p>Lightweight SMP plugin feature pack.</p>
+            </a>
+            <article class="entry">
+              <h3>SapphireBot <small>private</small></h3>
+              <p>Internal moderation/admin utility bot.</p>
+            </article>
+          </div>
+        </article>
       </section>
 
-      <section data-reveal>
-        <div class="section-head">
-          <span class="section-icon"><i data-lucide="sparkles"></i></span>
-          <h2>Interests</h2>
-        </div>
-        <div class="pills">
-          <span class="pill">Minecraft Plugin Development</span>
-          <span class="pill">Server Management</span>
-          <span class="pill">Discord Bot Development</span>
-          <span class="pill">Music</span>
-          <span class="pill">Speedrunning</span>
-        </div>
-      </section>
+      <section class="lower" data-reveal>
+        <article class="panel">
+          <h2><i data-lucide="sparkles"></i> Interest Mix</h2>
+          <div class="chips">
+            <span class="chip">Minecraft Plugin Dev</span>
+            <span class="chip">Server Management</span>
+            <span class="chip">Discord Bot Dev</span>
+            <span class="chip">Music</span>
+            <span class="chip">Speedrunning</span>
+          </div>
+        </article>
 
-      <section data-reveal>
-        <div class="section-head">
-          <span class="section-icon"><i data-lucide="hammer"></i></span>
-          <h2>Current Projects</h2>
-        </div>
-        <div class="grid two">
-          <a href="https://github.com/KoolFreedom/KoolFreedomBot" target="_blank" rel="noreferrer" class="card card-link">
-            <span class="card-kicker">open-source</span>
-            <h3>KoolFreedomBot</h3>
-            <p>Discord moderation and utility bot work.</p>
-          </a>
-          <a href="https://github.com/KoolFreedom/KoolChatFilter" target="_blank" rel="noreferrer" class="card card-link">
-            <span class="card-kicker">open-source</span>
-            <h3>KoolChatFilter</h3>
-            <p>Chat filtering system for Minecraft communities.</p>
-          </a>
-          <a href="https://github.com/KoolFreedom/KoolSMPCore" target="_blank" rel="noreferrer" class="card card-link">
-            <span class="card-kicker">open-source</span>
-            <h3>KoolSMPCore</h3>
-            <p>Lightweight SMP plugin with practical features.</p>
-          </a>
-          <article class="card card-link">
-            <span class="card-kicker">private</span>
-            <h3>SapphireBot</h3>
-            <p>Internal moderation/admin bot with utility tools.</p>
-          </article>
-        </div>
-      </section>
-
-      <section data-reveal>
-        <div class="section-head">
-          <span class="section-icon"><i data-lucide="code"></i></span>
-          <h2>Languages I Know</h2>
-        </div>
-        <div class="grid two">
-          <article class="card"><h3>Python</h3><p>Took classes in high school and still leveling up.</p></article>
-          <article class="card"><h3>C++</h3><p>Currently learning in college coursework.</p></article>
-          <article class="card"><h3>Java</h3><p>Self-taught through Minecraft plugin development.</p></article>
-          <article class="card"><h3>HTML</h3><p>This site is where I learned by shipping first.</p></article>
-        </div>
-      </section>
-
-      <section data-reveal>
-        <div class="section-head">
-          <span class="section-icon"><i data-lucide="mail"></i></span>
-          <h2>Best Ways to Contact Me</h2>
-        </div>
-        <div class="grid two">
-          <a href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer" class="card card-link">
-            <h3>Community Discord</h3>
-            <p>Main hangout server for chatting, gaming, and updates.</p>
-          </a>
-          <a href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noreferrer" class="card card-link">
-            <h3>KoolFreedom Discord</h3>
-            <p>Support and discussions for KoolFreedom projects.</p>
-          </a>
-          <a href="https://x.com/gamingto12" target="_blank" rel="noreferrer" class="card card-link">
-            <h3>Twitter / X</h3>
-            <p>I don't really check Twitter that often, but I still get notifications.</p>
-          </a>
-          <article class="card card-link">
-            <h3>GitHub Issues</h3>
-            <p>Best route for project-specific bug reports.</p>
-          </article>
-        </div>
+        <article class="panel">
+          <h2><i data-lucide="code"></i> Language Rotation</h2>
+          <div class="skills">
+            <div class="skill">Java<div class="skill-bar"><span class="skill-fill" style="width: 80%"></span></div></div>
+            <div class="skill">Python<div class="skill-bar"><span class="skill-fill" style="width: 72%"></span></div></div>
+            <div class="skill">C++<div class="skill-bar"><span class="skill-fill" style="width: 56%"></span></div></div>
+            <div class="skill">HTML/CSS<div class="skill-bar"><span class="skill-fill" style="width: 68%"></span></div></div>
+          </div>
+        </article>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2026 KoolFreedom</p>
-      <p>Thanks for checking the new version.</p>
+      <span>&copy; 2026 KoolFreedom</span>
+      <span>One link hub, one project board, no repeated sections.</span>
     </footer>
   </div>
 
@@ -501,7 +477,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.2 });
 
     document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
   </script>
