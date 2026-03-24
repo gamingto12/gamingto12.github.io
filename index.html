@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>gamingto12</title>
-  <meta name="description" content="gamingto12 - student developer building Minecraft plugins, Discord bots, and online communities." />
+  <title>gamingto12 — student dev portfolio</title>
+  <meta name="description" content="gamingto12 portfolio: Minecraft plugins, Discord bots, and community tools." />
   <link rel="icon" type="image/x-icon" href="https://gamingto12.is-a.dev/assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,6 +59,29 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 24px 46px rgba(0, 0, 0, 0.38);
+    }
+
+    .topnav {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: background 180ms ease, border-color 180ms ease;
+      background: rgba(9, 12, 19, 0.34);
+    }
+
+    .topnav a:hover {
+      background: rgba(9, 12, 19, 0.62);
+      border-color: #3a5e78;
     }
 
     .hero::after {
@@ -364,9 +387,15 @@
 <body>
   <div class="wrap">
     <header class="hero" data-reveal>
-      <span class="label"><span class="dot" aria-hidden="true"></span>JKanStyle</span>
+      <nav class="topnav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#links">Links</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="label"><span class="dot" aria-hidden="true"></span>Developer Portfolio</span>
       <h1>gamingto12</h1>
-      <p class="lead">Student developer shipping Minecraft plugins, Discord systems, and community tools that are actually useful.</p>
+      <p class="lead">Student developer focused on Minecraft plugins, Discord bots, and community tooling that people actually use.</p>
       <div class="hero-actions">
         <a class="btn primary" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer"><i data-lucide="users"></i> Community Discord</a>
         <a class="btn ghost" href="https://x.com/gamingto12" target="_blank" rel="noreferrer"><i data-lucide="twitter"></i> X / Twitter</a>
@@ -379,91 +408,67 @@
     </header>
 
     <main>
-      <section class="layout" data-reveal>
+      <section id="about" class="layout" data-reveal>
         <article class="panel">
-          <h2><i data-lucide="compass"></i> Live Links</h2>
-          <div class="links">
-            <a class="link-row" href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noreferrer">
-              <div class="link-meta">
-                <h3>KoolFreedom Discord</h3>
-                <p>my minecraft server + plugin support server</p>
-              </div>
-              <span class="tag">invite</span>
-            </a>
-            <a class="link-row" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer">
-              <div class="link-meta">
-                <h3>Main Community Server</h3>
-                <p>general chat + updates</p>
-              </div>
-              <span class="tag">invite</span>
-            </a>
-            <a class="link-row" href="https://discord.com/users/373969695633571842" target="_blank" rel="noreferrer">
-              <div class="link-meta">
-                <h3>Discord Profile</h3>
-                <p>direct profile link</p>
-              </div>
-              <span class="tag">profile</span>
-            </a>
-            <a class="link-row" href="https://x.com/gamingto12" target="_blank" rel="noreferrer">
-              <div class="link-meta">
-                <h3>X / Twitter</h3>
-                <p>updates + random thoughts</p>
-              </div>
-              <span class="tag">social</span>
-            </a>
-          </div>
+          <h2><i data-lucide="user"></i> About</h2>
+          <p>Hi! I’m gamingto12, an amateur developer passionate about Minecraft plugins, Discord bot development and speedrunning.</p>
+          <p>Current priorities: local community support, open-source contributions, and improving developer workflows.</p>
         </article>
 
-        <article class="panel">
+        <article class="panel" id="projects">
           <h2><i data-lucide="hammer"></i> Project Radar</h2>
           <div class="timeline">
             <a class="entry" href="https://github.com/KoolFreedom/KoolFreedomBot" target="_blank" rel="noreferrer">
               <h3>KoolFreedomBot <small>open-source</small></h3>
-              <p>Discord moderation and utility bot.</p>
+              <p>Discord moderation and utility bot</p>
             </a>
             <a class="entry" href="https://github.com/KoolFreedom/KoolChatFilter" target="_blank" rel="noreferrer">
               <h3>KoolChatFilter <small>open-source</small></h3>
-              <p>Minecraft chat filtering with practical controls.</p>
+              <p>Minecraft chat filtering with practical controls</p>
             </a>
             <a class="entry" href="https://github.com/KoolFreedom/KoolSMPCore" target="_blank" rel="noreferrer">
               <h3>KoolSMPCore <small>open-source</small></h3>
-              <p>Lightweight SMP plugin feature pack.</p>
+              <p>Lightweight SMP plugin feature pack</p>
             </a>
             <article class="entry">
               <h3>Notepad+++ <small>private</small></h3>
-              <p>Better notepad tool for Linux and macOS.</p>
+              <p>Minimal cross-platform text utility software</p>
             </article>
           </div>
         </article>
       </section>
 
-      <section class="lower" data-reveal>
+      <section id="links" class="lower" data-reveal>
         <article class="panel">
-          <h2><i data-lucide="sparkles"></i> Interest Mix</h2>
-          <div class="chips">
-            <span class="chip">Minecraft Plugin Dev</span>
-            <span class="chip">Server Management</span>
-            <span class="chip">Discord Bot Dev</span>
-            <span class="chip">Music</span>
-            <span class="chip">Speedrunning</span>
+          <h2><i data-lucide="link"></i> Live Links</h2>
+          <div class="links">
+            <a class="link-row" href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noreferrer">
+              <div class="link-meta"><h3>KoolFreedom Discord</h3><p>minecraft server + plugin support</p></div><span class="tag">invite</span>
+            </a>
+            <a class="link-row" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer">
+              <div class="link-meta"><h3>Main Community Server</h3><p>general chat + updates</p></div><span class="tag">invite</span>
+            </a>
+            <a class="link-row" href="https://x.com/gamingto12" target="_blank" rel="noreferrer">
+              <div class="link-meta"><h3>X / Twitter</h3><p>updates + quick notes</p></div><span class="tag">social</span>
+            </a>
           </div>
         </article>
 
-        <article class="panel">
-          <h2><i data-lucide="code"></i> Language Rotation</h2>
-          <div class="skills">
-            <div class="skill">Java<div class="skill-bar"><span class="skill-fill" style="width: 80%"></span></div></div>
-            <div class="skill">Python<div class="skill-bar"><span class="skill-fill" style="width: 72%"></span></div></div>
-            <div class="skill">C++<div class="skill-bar"><span class="skill-fill" style="width: 56%"></span></div></div>
-            <div class="skill">HTML/CSS<div class="skill-bar"><span class="skill-fill" style="width: 68%"></span></div></div>
+        <article class="panel" id="contact">
+          <h2><i data-lucide="mail"></i> Contact</h2>
+          <p>Prefer DM or server messages for faster replies. Open to new collaboration requests and project feedback.</p>
+          <div class="chips">
+            <span class="chip">Discord: gamingto12</span>
+            <span class="chip">X: @gamingto12</span>
+            <span class="chip">GitHub: KoolFreedom</span>
           </div>
         </article>
       </section>
     </main>
 
     <footer>
-      <span>&copy; 2026 KoolFreedom</span>
-      <span>if you're reading this you smell</span>
+      <span>&copy; 2026 gamingto12 / KoolFreedom</span>
+      <span>Built with simplicity and community in mind.</span>
     </footer>
   </div>
 
