@@ -4,487 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gamingto12</title>
-  <meta name="description" content="gamingto12 portfolio: Minecraft plugins, Discord bots, and community tools." />
-  <link rel="icon" type="image/x-icon" href="https://gamingto12.is-a.dev/assets/favicon.ico" />
+  <meta name="description" content="Home for gamingto12: Minecraft servers, projects, and community links." />
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    :root {
-      --bg: #090c13;
-      --bg-soft: #101726;
-      --panel: #111c2b;
-      --panel-2: #0f141d;
-      --line: #24344b;
-      --ink: #e8f1ff;
-      --muted: #9bb0c8;
-      --brand: #46e0ca;
-      --warn: #ff9e68;
-      --radius: 16px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Sora", sans-serif;
-      color: var(--ink);
-      background:
-        linear-gradient(120deg, rgba(70, 224, 202, 0.14), transparent 35%),
-        linear-gradient(280deg, rgba(255, 158, 104, 0.12), transparent 38%),
-        radial-gradient(circle at 88% 2%, #173349 0%, transparent 30%),
-        var(--bg);
-      min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      width: min(1060px, calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 2.2rem 0 2.6rem;
-    }
-
-    .hero {
-      border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 10px);
-      background: linear-gradient(160deg, #132234 0%, #0f1623 70%);
-      padding: clamp(1.4rem, 3.5vw, 2rem);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 24px 46px rgba(0, 0, 0, 0.38);
-    }
-
-    .topnav {
-      display: flex;
-      gap: 0.8rem;
-      margin-bottom: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    .topnav a {
-      color: var(--ink);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.38rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: background 180ms ease, border-color 180ms ease;
-      background: rgba(9, 12, 19, 0.34);
-    }
-
-    .topnav a:hover {
-      background: rgba(9, 12, 19, 0.62);
-      border-color: #3a5e78;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      top: -170px;
-      right: -120px;
-      background: radial-gradient(circle, rgba(70, 224, 202, 0.36), rgba(70, 224, 202, 0));
-      pointer-events: none;
-    }
-
-    .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.76rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      background: rgba(9, 12, 19, 0.55);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.42rem 0.72rem;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--warn);
-      box-shadow: 0 0 0 4px rgba(255, 158, 104, 0.2);
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 8vw, 4.8rem);
-      line-height: 0.92;
-      margin: 0.8rem 0 0.5rem;
-      letter-spacing: -0.04em;
-    }
-
-    .lead {
-      margin: 0;
-      color: var(--muted);
-      max-width: 44ch;
-      font-size: clamp(0.95rem, 2vw, 1.14rem);
-    }
-
-    .hero-actions {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.56rem 0.84rem;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      border: 1px solid transparent;
-      transition: transform 160ms ease, border-color 160ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: #4b5f78;
-    }
-
-    .btn.primary {
-      background: var(--brand);
-      color: #04110f;
-      font-weight: 600;
-    }
-
-    .btn.ghost {
-      background: rgba(9, 12, 19, 0.55);
-      border-color: var(--line);
-    }
-
-    .stats {
-      margin-top: 1rem;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.6rem;
-    }
-
-    .stat {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(9, 12, 19, 0.52);
-      padding: 0.65rem 0.75rem;
-    }
-
-    .stat b {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.1rem;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel-2);
-      padding: 1rem;
-    }
-
-    .panel h2 {
-      margin: 0 0 0.75rem;
-      font-size: 1.06rem;
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .links {
-      display: grid;
-      gap: 0.5rem;
-    }
-
-    .link-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
-      align-items: center;
-      background: var(--bg-soft);
-      border: 1px solid #203149;
-      border-radius: 12px;
-      padding: 0.64rem 0.72rem;
-      transition: border-color 160ms ease, transform 160ms ease;
-    }
-
-    .link-row:hover {
-      border-color: #3e6a80;
-      transform: translateX(3px);
-    }
-
-    .link-meta {
-      min-width: 0;
-    }
-
-    .link-meta h3 {
-      margin: 0;
-      font-size: 0.92rem;
-    }
-
-    .link-meta p {
-      margin: 0.15rem 0 0;
-      color: var(--muted);
-      font-size: 0.78rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .tag {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.72rem;
-      color: var(--brand);
-      white-space: nowrap;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 0.65rem;
-    }
-
-    .entry {
-      padding: 0.75rem 0.8rem;
-      border: 1px solid #24354d;
-      border-left: 4px solid #2c5d7d;
-      border-radius: 10px;
-      background: #0d1725;
-    }
-
-    .entry h3 {
-      margin: 0;
-      font-size: 0.94rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
-      align-items: baseline;
-    }
-
-    .entry small {
-      color: var(--muted);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-    }
-
-    .entry p {
-      margin: 0.35rem 0 0;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .lower {
-      margin-top: 1rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.42rem;
-    }
-
-    .chip {
-      font-size: 0.78rem;
-      border: 1px solid #2a3d56;
-      border-radius: 999px;
-      padding: 0.35rem 0.65rem;
-      background: #101b2a;
-      color: #b6c9dd;
-    }
-
-    .skills {
-      display: grid;
-      gap: 0.45rem;
-    }
-
-    .skill {
-      font-size: 0.82rem;
-      display: grid;
-      gap: 0.24rem;
-    }
-
-    .skill-bar {
-      width: 100%;
-      height: 8px;
-      border-radius: 999px;
-      background: #0f1928;
-      border: 1px solid #25384f;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      display: block;
-      height: 100%;
-      background: linear-gradient(90deg, #2f9a9a, #59d7d1);
-    }
-
-    footer {
-      margin-top: 1.2rem;
-      border-top: 1px dashed #263a52;
-      padding-top: 0.8rem;
-      font-size: 0.76rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-    }
-
-    [data-reveal] {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 460ms ease, transform 460ms ease;
-    }
-
-    [data-reveal].show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 920px) {
-      .layout,
-      .lower {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .entry h3 {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="hero" data-reveal>
-      <nav class="topnav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#links">Links</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <span class="label"><span class="dot" aria-hidden="true"></span>JKanStyle</span>
+    <nav class="nav">
+      <a class="active" href="/">Home</a>
+      <a href="/servers/">Servers</a>
+      <a href="/projects/">Projects</a>
+    </nav>
+
+    <header class="hero">
+      <span class="badge"><span class="dot" aria-hidden="true"></span>redesign v3</span>
       <h1>gamingto12</h1>
-      <p class="lead">Student developer focused on Minecraft plugins, Discord bots, and community tooling that people actually use.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer"><i data-lucide="users"></i> Community Discord</a>
-        <a class="btn ghost" href="https://x.com/gamingto12" target="_blank" rel="noreferrer"><i data-lucide="twitter"></i> X / Twitter</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>4</b><span>Active projects</span></div>
-        <div class="stat"><b>3</b><span>Main languages in rotation</span></div>
-        <div class="stat"><b>1</b><span>Goal: git gud</span></div>
+      <p class="lead">I run Minecraft communities, build moderation and utility software, and keep shipping better tools over time.</p>
+      <div class="actions">
+        <a class="btn primary" href="/servers/"><i data-lucide="server"></i> View Servers</a>
+        <a class="btn ghost" href="/projects/"><i data-lucide="hammer"></i> View Projects</a>
       </div>
     </header>
 
-    <main>
-      <section id="about" class="layout" data-reveal>
-        <article class="panel">
-          <h2><i data-lucide="user"></i> About</h2>
-          <p>Hi! I’m gamingto12, an amateur developer passionate about Minecraft plugins, Discord bot development and speedrunning.</p>
-          <p>Current priorities: local community support, open-source contributions, and improving developer workflows.</p>
-        </article>
-
-        <article class="panel" id="projects">
-          <h2><i data-lucide="hammer"></i> Project Radar</h2>
-          <div class="timeline">
-            <a class="entry" href="https://github.com/KoolFreedom/KoolFreedomBot" target="_blank" rel="noreferrer">
-              <h3>KoolFreedomBot <small>open-source</small></h3>
-              <p>Discord moderation and utility bot</p>
-            </a>
-            <a class="entry" href="https://github.com/KoolFreedom/KoolChatFilter" target="_blank" rel="noreferrer">
-              <h3>KoolChatFilter <small>open-source</small></h3>
-              <p>Minecraft chat filtering with practical controls</p>
-            </a>
-            <a class="entry" href="https://github.com/KoolFreedom/KoolSMPCore" target="_blank" rel="noreferrer">
-              <h3>KoolSMPCore <small>open-source</small></h3>
-              <p>Lightweight SMP plugin feature pack</p>
-            </a>
-            <article class="entry">
-              <h3>Notepad+++ <small>private</small></h3>
-              <p>Minimal cross-platform text utility software</p>
-            </article>
-          </div>
-        </article>
+    <main class="grid two">
+      <section class="card">
+        <h2>About This Site</h2>
+        <p class="muted">This is now split into separate pages so each area has room for details instead of being crowded into one page.</p>
+        <div class="pills">
+          <span class="pill">Red-orange theme</span>
+          <span class="pill">Multi-page structure</span>
+          <span class="pill">GitHub Pages ready</span>
+        </div>
       </section>
 
-      <section id="links" class="lower" data-reveal>
-        <article class="panel">
-          <h2><i data-lucide="link"></i> Live Links</h2>
-          <div class="links">
-            <a class="link-row" href="https://discord.gg/MTYrSgVkmd" target="_blank" rel="noreferrer">
-              <div class="link-meta"><h3>KoolFreedom Discord</h3><p>minecraft server + plugin support</p></div><span class="tag">invite</span>
-            </a>
-            <a class="link-row" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer">
-              <div class="link-meta"><h3>Main Community Server</h3><p>general chat + updates</p></div><span class="tag">invite</span>
-            </a>
-            <a class="link-row" href="https://x.com/gamingto12" target="_blank" rel="noreferrer">
-              <div class="link-meta"><h3>X / Twitter</h3><p>updates + quick notes</p></div><span class="tag">social</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="panel" id="contact">
-          <h2><i data-lucide="mail"></i> Contact</h2>
-          <p>Prefer DM or server messages for faster replies. Open to new collaboration requests and project feedback.</p>
-          <div class="chips">
-            <span class="chip">Discord: gamingto12</span>
-            <span class="chip">X: @gamingto12</span>
-            <span class="chip">GitHub: KoolFreedom</span>
-          </div>
-        </article>
+      <section class="card">
+        <h2>Quick Links</h2>
+        <div class="list">
+          <a class="list-item" href="https://discord.gg/yh2DtaTwGt" target="_blank" rel="noreferrer">
+            <div>
+              <strong>Main Community Discord</strong>
+              <p>Announcements, chat, and community updates.</p>
+            </div>
+            <span class="kicker">discord</span>
+          </a>
+          <a class="list-item" href="https://x.com/gamingto12" target="_blank" rel="noreferrer">
+            <div>
+              <strong>X / Twitter</strong>
+              <p>Quick updates and contact option.</p>
+            </div>
+            <span class="kicker">social</span>
+          </a>
+        </div>
       </section>
     </main>
 
     <footer>
       <span>&copy; 2026 gamingto12 / KoolFreedom</span>
-      <span>Built with simplicity and community in mind.</span>
     </footer>
   </div>
 
-  <script>
-    lucide.createIcons();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
-  </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | gamingto12</title>
+  <meta name="description" content="Project portfolio for gamingto12." />
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/servers/">Servers</a>
+      <a class="active" href="/projects/">Projects</a>
+    </nav>
+
+    <header class="hero">
+      <span class="badge"><span class="dot" aria-hidden="true"></span>active builds</span>
+      <h1>Project Showcase</h1>
+      <p class="lead">Current software and plugin work, split out for more detail and easier browsing.</p>
+    </header>
+
+    <main class="grid two">
+      <article class="card">
+        <h2>Open Source</h2>
+        <div class="list">
+          <a class="list-item" href="https://github.com/KoolFreedom/KoolFreedomBot" target="_blank" rel="noreferrer">
+            <div><strong>KoolFreedomBot</strong><p>Discord moderation and utility bot.</p></div>
+            <span class="kicker">github</span>
+          </a>
+          <a class="list-item" href="https://github.com/KoolFreedom/KoolChatFilter" target="_blank" rel="noreferrer">
+            <div><strong>KoolChatFilter</strong><p>Chat filtering plugin for Minecraft servers.</p></div>
+            <span class="kicker">github</span>
+          </a>
+          <a class="list-item" href="https://github.com/KoolFreedom/KoolSMPCore" target="_blank" rel="noreferrer">
+            <div><strong>KoolSMPCore</strong><p>Lightweight SMP core plugin features.</p></div>
+            <span class="kicker">github</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Private / In Progress</h2>
+        <div class="list">
+          <div class="list-item">
+            <div><strong>SapphireBot</strong><p>Private moderation/admin bot with utility commands.</p></div>
+            <span class="kicker">private</span>
+          </div>
+          <div class="list-item">
+            <div><strong>Notepad+++</strong><p>My take on Notepad++ for MacOS and Linux, but privately maintained.</p></div>
+            <span class="kicker">internal</span>
+          </div>
+        </div>
+        <div class="pills">
+          <span class="pill">Java</span>
+          <span class="pill">Python</span>
+          <span class="pill">Discord API</span>
+          <span class="pill">Minecraft</span>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <span>Add more project cards as you launch new repos.</span>
+    </footer>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
